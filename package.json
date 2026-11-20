@@ -1,0 +1,98 @@
+{
+  "name": "@kobalte/core",
+  "version": "2.0.0-alpha.5",
+  "private": false,
+  "description": "Unstyled components and primitives for building accessible web apps and design systems with SolidJS.",
+  "keywords": [
+    "solid",
+    "solidjs",
+    "ui",
+    "library",
+    "design-system",
+    "components",
+    "headless",
+    "unstyled",
+    "aria"
+  ],
+  "homepage": "https://github.com/kobaltedev/kobalte/tree/main/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/kobaltedev/kobalte/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kobaltedev/kobalte.git"
+  },
+  "license": "MIT",
+  "author": "jer3m01 <jer3m01@jer3m01.com>",
+  "contributors": [
+    "Fabien Marie-Louise <fabienml.dev@gmail.com>"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "solid": "./dist/*/index.jsx",
+      "default": "./dist/*/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*/index.d.ts",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
+    "@internationalized/number": "^3.6.9",
+    "@solid-primitives/a11y": "1.0.0",
+    "@solid-primitives/controlled-signal": "1.0.0",
+    "@solid-primitives/event-listener": "3.0.0",
+    "@solid-primitives/i18n": "3.0.0",
+    "@solid-primitives/focus": "1.0.0",
+    "@solid-primitives/form": "1.0.0",
+    "@solid-primitives/interaction": "1.0.0",
+    "@solid-primitives/keyboard": "2.0.0",
+    "@solid-primitives/platform": "1.0.0",
+    "@solid-primitives/props": "4.0.0",
+    "@solid-primitives/refs": "3.0.0",
+    "@solid-primitives/resize-observer": "4.0.0",
+    "@solid-primitives/presence": "1.0.0",
+    "@solid-primitives/scroll": "3.0.0",
+    "@solid-primitives/upload": "1.0.0",
+    "@solid-primitives/utils": "7.0.0",
+    "@kobalte/utils": "2.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "@solidjs/web": "2.0.3",
+    "solid-js": "2.0.3",
+    "tsdown": "0.23.0",
+    "typescript": "7.0.2",
+    "unplugin-solid": "3.0.0",
+    "@kobalte/tests": "0.6.0"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0",
+    "solid-js": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf node_modules && rm -rf dist",
+    "dev": "vite serve dev --host",
+    "test": "vitest run",
+    "test:ssr": "vitest run --config vite.ssr.config.ts",
+    "test:all": "pnpm run test && pnpm run test:ssr",
+    "typecheck": "tsc --noEmit"
+  }
+}
